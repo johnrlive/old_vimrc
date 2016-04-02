@@ -31,12 +31,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 """ KEY COMBOS
-
 set splitbelow
 set splitright
 
 """ split navigations
-
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -44,22 +42,18 @@ nnoremap <C-H> <C-W><C-H>
 
 """ Enable Folding """
 """ Plugin 'tmhedberg/SimpylFold'
-
 set foldmethod=indent
 set foldlevel=99
 
 """ Enable folding with the spacebar """
 nnoremap <space> za
-
 let g:SimpylFold_docstring_preview=1
-
 
 """ Python Indentation (PEP8) """
 """ Plugin 'vim-scripts/indentpython.vim'
 """ Of course for code folding to work based on indentations, you want your indents to be correct. Again VIM falls short a bit out of the box because it doesn’t handle auto-indent after a function definition. Two things can be done with indentation:
   """ 1. The first is to get indentation to follow PEP8 standards.
   """ 2. The second part is to better handle auto-indentation.
-
 au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
@@ -68,7 +62,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
-
 au BufNewFile,BufRead *.js, *.html, *.css
         \ set tabstop=2
         \ set softtabstop=2
@@ -82,12 +75,10 @@ set encoding=utf-8
 
 """ You Complete configuration
 """ Bundle 'Valloric/YouCompleteMe'
-
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 """ python with virtualenv support
-
 py << EOF
 import os
 import sys
@@ -100,14 +91,12 @@ EOF
 " Syntax Checking/Highlighting
 "Plugin 'scrooloose/syntastic'
 "Plugin 'nvie/vim-flake8'
-
 let python_highlight_all=1
 syntax on
 
 """ Color Schemes
 """ Plugin 'jnurmine/Zenburn'
 """ Plugin 'altercation/vim-colors-solarized'
-
 if has('gui_running')
   set background=dark
   colorscheme solarized
@@ -121,6 +110,7 @@ call togglebg#map("<F5>")
 """ Plugin 'scrooloose/nerdtree'
 """ Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+map <return> :NERDTreeToggle<CR>
 
 """ Line Numbering On
 set nu
@@ -134,6 +124,7 @@ set nu
 """ Vim usually has its own clipboard and ignores the system keyboards, but sometimes you might want to cut, copy, and/or paste to/from other applications outside of VIM. On OSX, you can access your system clipboard with this line:
 
 set clipboard=unnamed
-
 """ VIM in the Shell
 """ And finally, once you’ve mastered VIM and its keyboard shortcuts, you’ll often find yourself getting annoyed with the lack of those same shortcuts in the shell. Fear not, most shells have a VI mode. To turn it on for your shell, add the following line to ~/.inputrc: set editing-mode vi
+
+set backspace=eol,start

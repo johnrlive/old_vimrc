@@ -3,7 +3,7 @@
 
 - mkdir ~/vimrc
 - cd ~/vimrc
-- git clone [addy]
+- git clone git@github.com:johnrlive/vimrc.git
 - ln -s ~/vimrc/.vimrc ~/.vimrc
 - vim
 - :PluginInstall
